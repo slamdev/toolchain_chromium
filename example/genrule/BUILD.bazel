@@ -1,0 +1,24 @@
+load("@bazel_skylib//rules:write_file.bzl", "write_file")
+load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
+
+genrule(
+    name = "actual",
+    outs = ["actual.html"],
+    cmd = "$(CHROMIUM_BIN) --headless --disable-gpu --no-sandbox --disable-setuid-sandbox --dump-dom http://httpbin.org/base64/SFRUUEJJTiBpcyBhd2Vzb21l > $@",
+    toolchains = ["@chromium961656_toolchains//:resolved_toolchain"],
+)
+
+write_file(
+    name = "expected",
+    out = "expected.html",
+    content = [
+        "<html><head></head><body>HTTPBIN is awesome</body></html>",
+        "",
+    ],
+)
+
+diff_test(
+    name = "check_eval",
+    file1 = ":expected",
+    file2 = ":actual",
+)
