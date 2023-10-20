@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: bazelbuild/setup-bazelisk@v2
       - name: Check git state is clean
         run: git status --porcelain
