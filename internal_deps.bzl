@@ -55,11 +55,11 @@ def toolchain_chromium_internal_deps():
     maybe(
         http_archive,
         name = "bazel_skylib",
-        sha256 = "07b4117379dde7ab382345c3b0f5edfc6b7cff6c93756eac63da121e0bbcc5de",
-        strip_prefix = "bazel-skylib-1.1.1",
+        sha256 = "e3fea03ff75a9821e84199466799ba560dbaebb299c655b5307f4df1e5970696",
+        strip_prefix = "bazel-skylib-1.7.1",
         urls = [
-            "https://github.com/bazelbuild/bazel-skylib/archive/1.1.1.tar.gz",
-            "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/archive/1.1.1.tar.gz",
+            "https://github.com/bazelbuild/bazel-skylib/archive/1.7.1.tar.gz",
+            "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/archive/1.7.1.tar.gz",
         ],
     )
 
