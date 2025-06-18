@@ -22,6 +22,7 @@ with only the toolchain attribute pointing into the platform-specific repositori
 PLATFORMS = {
     "Mac_Arm": struct(
         os = "mac",
+        filename = "mac-arm64",
         compatible_with = [
             "@platforms//os:macos",
             "@platforms//cpu:arm64",
@@ -29,6 +30,7 @@ PLATFORMS = {
     ),
     "Mac": struct(
         os = "mac",
+        filename = "mac",
         compatible_with = [
             "@platforms//os:macos",
             "@platforms//cpu:x86_64",
@@ -36,6 +38,7 @@ PLATFORMS = {
     ),
     "Linux_x64": struct(
         os = "linux",
+        filename = "linux",
         compatible_with = [
             "@platforms//os:linux",
             "@platforms//cpu:x86_64",

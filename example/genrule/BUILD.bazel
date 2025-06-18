@@ -4,8 +4,8 @@ load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
 genrule(
     name = "actual",
     outs = ["actual.html"],
-    cmd = "$(CHROMIUM_BIN) --headless --disable-gpu --no-sandbox --disable-setuid-sandbox --dump-dom http://httpbin.org/base64/SFRUUEJJTiBpcyBhd2Vzb21l > $@",
-    toolchains = ["@chromium961656_toolchains//:resolved_toolchain"],
+    cmd = "$(CHROMIUM_BIN) --headless --disable-gpu --no-sandbox --disable-setuid-sandbox --dump-dom https://httpbin.org/base64/SFRUUEJJTiBpcyBhd2Vzb21l > $@",
+    toolchains = ["@chromium1178_toolchains//:resolved_toolchain"],
 )
 
 write_file(

@@ -18,12 +18,12 @@ load("@slamdev_toolchain_chromium//chromium:repositories.bzl", "chromium_registe
 toolchain_chromium_dependencies()
 
 chromium_register_toolchains(
-    name = "chromium961656",
-    chromium_revision = "961656",
+    name = "chromium1178",
+    chromium_revision = "1178",
     sha256 = {
-        "Mac_Arm": "0c34085537c08d7ccd912abf8e16cd5c548652c3f9f8e9b49b5e392897d9b737",
-        "Mac": "a658e17d5bd380c9979b09573bd4c98d0a0cf57a009c2fe125e52b86606e9d70",
-        "Linux_x64": "3467146abacd8fae1f2af72f5b51635b1e4e050e67a3ab4589a8cabf6937b8b5",
+        "Mac_Arm": "f9c151bc5e8868a1a8493a4704a5d701462f9094ef1f915417ad0919f34386cb",
+        "Mac": "85b29d14241b3236805e6aa458b79f3a1bdff57c45855bed553ef11d5e15d181",
+        "Linux_x64": "0eb52534de2ee34e978c546ddda54478772124e6e6bd1b492069cbd0ed95d36c",
     },
 )
 ```
