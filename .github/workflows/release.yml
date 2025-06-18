@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - uses: bazelbuild/setup-bazelisk@v2
+        uses: actions/checkout@v4
+      - uses: bazel-contrib/setup-bazel@0.15.0
       - name: Check git state is clean
         run: git status --porcelain
       - name: Export release version
@@ -29,7 +29,7 @@ jobs:
       - name: Export checksum
         run: 'echo "RELEASE_CHECKSUM=$(shasum -b -a 256 bazel-bin/slamdev_toolchain_chromium-v${{ env.RELEASE_VERSION }}.tar.gz | cut -d " " -f 1)" >> $GITHUB_ENV'
       - name: Upload release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: bazel-bin/slamdev_toolchain_chromium-v${{ env.RELEASE_VERSION }}.tar.gz
           fail_on_unmatched_files: true
